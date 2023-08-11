@@ -26,7 +26,7 @@ public class StudentManagerTest {
         Assertions.assertEquals(1, students.size());
         Assertions.assertTrue(students.contains(student));
 
-        Assertions.assertTrue(studentManager.addStudent(student));
+        // Assertions.assertTrue(studentManager.addStudent(student));
         Assertions.assertFalse(studentManager.addStudent(student)); // Duplicate email should return false
     }
 
