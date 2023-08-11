@@ -1,18 +1,22 @@
 package tracker;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
-import java.util.List;
 
 public class StudentManagerTest {
 
+    private StudentManager studentManager;
+
+    @BeforeEach
+    public void setUp() {
+        studentManager = new StudentManager();
+    }
+
     @Test
     public void testAddStudent() {
-        // Create a StudentManager instance
-        StudentManager studentManager = new StudentManager();
-
         // Create a Student
         Student student = new Student("John", "Doe", "test@test.com");
 
@@ -32,9 +36,6 @@ public class StudentManagerTest {
 
     @Test
     public void testGetStudentByID() {
-        // Create a StudentManager instance
-        StudentManager studentManager = new StudentManager();
-
         Student student = new Student("Alice", "Smith", "alice@example.com");
         studentManager.addStudent(student);
 
@@ -44,9 +45,6 @@ public class StudentManagerTest {
 
     @Test
     public void testAddMultipleStudents() {
-        // Create a StudentManager instance
-        StudentManager studentManager = new StudentManager();
-
         // Create multiple students
         Student student1 = new Student("John", "Doe", "test1@test.com");
         Student student2 = new Student("Jane", "Smith", "test2@test.com");
@@ -69,9 +67,6 @@ public class StudentManagerTest {
 
     @Test
     public void testEmptyStudentManager() {
-        // Create a StudentManager instance
-        StudentManager studentManager = new StudentManager();
-
         // Get the list of students from the StudentManager
         Set<Student> students = studentManager.getStudents();
 
@@ -79,6 +74,5 @@ public class StudentManagerTest {
         Assertions.assertTrue(students.isEmpty());
     }
 
-    // Add more tests for other methods in StudentManager if applicable
 
 }
